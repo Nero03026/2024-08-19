@@ -1,2 +1,5 @@
 
 1.要把第一個你想展示畫面的檔案名稱改成index.html
+2.到github網頁的專案裡面 找到設定檔(Settings)
+3.左邊的選單列下方有一個按鈕點下去(Pages)
+4.修改 Build and deployment -> Branch 要把 None 改成 main 後儲存

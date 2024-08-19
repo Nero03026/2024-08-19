@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script>
+        // 東西重複的很頻繁，在使用
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clif: '#FF0000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        /* 有必要把樣式整合，在使用 */
+        @layer utilities {
+          .card {
+            width: 100px;
+            height: 100px;
+            background-color: #FF0000;
+          }
+        }
+      </style>
+</head>
+
+<body>
+    <h1 class="text-3xl font-bold underline text-clif card">
+        Hello world!
+    </h1>
+    <!-- [] -> 裡面可以撰寫自定義的值 -->
+    <h1 class="text-3xl font-bold underline text-clif w-[100px] h-[100px] bg-red-600">
+        Hello world!
+    </h1>
+</body>
+
+</html>

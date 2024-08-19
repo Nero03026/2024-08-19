@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // var 變數的名稱 = 變數的值; // 儲存在這個script裡面
+        // 1.放置 setItem
+        localStorage.setItem('變數的名稱', '變數的值'); //儲存在瀏覽器上
+        localStorage.setItem('變數的名稱01', '變數的值'); //儲存在瀏覽器上
+        localStorage.setItem('變數的名稱02', '變數的值'); //儲存在瀏覽器上
+        localStorage.setItem('變數的名稱03', '變數的值'); //儲存在瀏覽器上
+        // 2.取得 getItem
+        console.log(localStorage.getItem('變數的名稱'));
+
+        // 裡面的值->只能夠放字串
+
+        // 物件或陣列轉換成字串JSON
+        const obj = { name: "John", age: 30, city: "New York" };
+        const myJSON = JSON.stringify(obj);
+        console.log('陣列或物件變成字串', myJSON, typeof (myJSON));
+        const obj01 = '{"name":"John", "age":30, "city":"New York"}';
+        const myJSON01 = JSON.parse(obj01);
+        console.log('把字串變成陣列或物件', myJSON01, typeof (myJSON01));
+        // localStorage.setItem('變數的名稱01', myJSON); //上面如果有放置一次，有再重複寫的話，會覆蓋過去。
+
+        console.log('------------變數的名稱01-----------');
+        let box = localStorage.getItem('變數的名稱01');
+        console.log(box, typeof (box));
+        console.log(JSON.parse(box));
+
+        // localStorage / sessionStorage
+        // 1.localStorage網頁關掉重開，還是會有資料
+        // 2.sessionStorage網頁關掉就會消失
+        // sessionStorage.setItem('變數的名稱04', '變數的值');
+    </script>
+</body>
+
+</html>
