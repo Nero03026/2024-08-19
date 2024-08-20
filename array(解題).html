@@ -1,0 +1,68 @@
+<!DOCTYhtml>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            // 一串水果的陣列
+            let fruit = ['blueberry', 'berry', 'bilberry', 'blacurrant', 'currant', 'cranberry', 'blackberry', 'strawberry', 'raspberry', 'mulberry', 'bayberry', 'boysenberries', 'gooseberry', 'orange', 'ponkan', 'Bergamot', 'citron', 'pomelo', 'shaddock', 'oroblanco', 'citrus', 'tangerine', 'tangelo', 'sunkist', 'grapefruit', 'lemon', 'lime', 'kumquat'];
+            console.log('一串水果的陣列:');
+            console.log(fruit);
+
+            //  1.總共有幾個水果
+            console.log('總共有幾個水果:' + fruit.length);
+
+            // 2.在最後一個水果後面新增 longan
+            // push -> 資料會新增到陣列的最後一筆後面
+            // fruit.push('longan')
+
+            // splice('你的初始位置','要調整幾個內容','要替換的內容放這邊') -> 找到的資料位置把東西取代掉
+            // fruit.splice(fruit.length, 0, 'longan');
+
+            // 用陣列的索引值新增
+            // fruit[fruit.length] = 'longan'
+
+            console.log(fruit);
+
+            // 3.找到ponkan在第幾個位置
+            console.log(fruit.indexOf('ponkan'));
+            // for / foreach
+            fruit.forEach((item, index) => {
+                if (item == 'ponkan') return console.log(index); 
+            });
+
+            // 4.找到第26個位置的水果名稱
+            // 陣列->是從0開始的
+            console.log(fruit[25]);
+            fruit.forEach((item, index) => {
+                if (index == 25) return console.log(item);
+            });
+
+            // 5.我要取得第5~10個水果陣列
+            // slice('初始的位置', '結束的位置')
+            // 結束的位置如果有值，是不會取得到
+            // 有看到負數的話，是從陣列的最後面往回算
+            // 10 -> 結束位置要在+1  -> 11 -> 第0筆要扣掉 11 -1 -> 10
+            console.log(fruit.slice(4, 10));
+
+            // 6.過濾只有水果的文字中有包含 berry 的文字
+            const result = fruit.filter((item) => item.includes('berry'));
+            console.log(result);
+
+            // 7.在 berry 的水果後面加個 1
+            // map
+            const map1 = fruit.map((x) => {
+                if (x.includes('berry'))  return x + '1';
+                else return x
+            });
+            console.log(map1);
+
+        </script>
+    </body>
+
+    </html>

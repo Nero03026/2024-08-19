@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="w-full flex justify-between items-center gap-8 p-5 border">
+            <div>蘋果</div>
+            <!-- data-自己取的變數名稱='你要放的字串' -->
+            <button type="button" data-fruit="蘋果"
+                class="btn w-10 h-10 flex justify-center items-center bg-green-500 rounded-full text-white active:bg-green-300">購買</button>
+        </div>
+        <div class="w-full flex justify-between items-center gap-8 p-5 border">
+            <div>哈密瓜</div>
+            <button type="button" data-fruit="哈密瓜"
+                class="btn w-10 h-10 flex justify-center items-center bg-green-500 rounded-full text-white active:bg-green-300">購買</button>
+        </div>
+    </section>
+    <section>
+        <a href="/step02.html">下一步</a>
+    </section>
+    <script>
+        //選擇到所有按鈕
+        const btns = document.querySelectorAll('.btn');
+        // 匿名函式
+        // btns.forEach(function (item) {
+        //     item.addEventListener('click', function () {
+        //         console.log('有點到我');
+        //         // item.dataset ->取得到所有的 data-* Attribute
+        //         console.log(item.dataset);
+        //         // 要取得裡面的 data-* Attribute 
+        //         console.log(item.dataset.fruit);
+        //         // 把東西放到網頁暫存上 
+        //     });
+        //     // console.log(item);
+        // });
+        // 箭頭函式
+        btns.forEach((btn) => {
+            btn.addEventListener('click', function () {
+                console.log('有點到我');
+                // item.dataset ->取得到所有的 data-* Attribute
+                console.log(btn.dataset);
+                // 要取得裡面的 data-* Attribute 
+                console.log(btn.dataset.fruit);
+                // 把東西放到網頁暫存上 localStorage / sessionStorage
+                sessionStorage.setItem('fruit' + btn.dataset.fruit, 1);
+                // 要過濾哪一個是水果的話，可以加個前綴過濾
+            });
+            // console.log(item);
+        });
+    </script>
+</body>
+
+</html>

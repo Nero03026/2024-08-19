@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <div>商品</div>
+            <div>數量</div>
+        </div>
+        <div id="shoplist" class="flex"></div>
+    </section>
+
+    <script>
+        const shoplist = document.querySelector('#shoplist');
+        const fruit = sessionStorage;
+        const result = Object.keys(fruit).filter((item) => item.includes('fruit'));
+        console.log(result);
+        Object.keys(fruit).forEach(element => {
+            if (result.includes(element)) {
+                // 物件取值的方式
+                // 1. 物件.KEY的名稱  (帶KEY的名稱)
+                // 2. 物件[KEY的名稱] (帶KEY的名稱或者變數也可以)
+                console.log(fruit[element]);
+                shoplist.innerHTML += `
+                    <div>
+                        <div>${element.replace('fruit', '')}</div>
+                        <div>${fruit[element]}</div>
+                    </div>`;
+            }
+        });
+
+        // 陣列可以使用下方的過濾方式
+        // const result = fruit.filter((word) => console.log(word));
+        // console.log(result);
+    </script>
+</body>
+
+</html>
